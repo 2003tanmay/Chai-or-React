@@ -61,8 +61,8 @@ const Signup = () => {
                             {...register("email", {
                                 required: true,
                                 validate: {
-                                    matchPatern: (value) => /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(value) ||
-                                        "Email address must be a valid address",
+                                    matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                                    "Email address must be a valid address",
                                 }
                             })}
                         />
@@ -73,7 +73,7 @@ const Signup = () => {
                             {...register("password", {
                                 required: true,
                                 validate: {
-                                    matchPattern: (value) => /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(value) ||
+                                    matchPatern: (value) => /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(value) ||
                                         "Password must contain <br> - at least 8 characters <br> - must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number <br> - Can contain special characters"
                                 }
                             })}
